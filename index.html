@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTIKA DESIGN | Дизайн на заказ</title>
+    <!-- Подключение шрифтов Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- КАСТОМНЫЙ КУРСОР -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- ШАПКА САЙТА -->
+    <header>
+        <div class="logo">ENTIKA DESIGN</div>
+        <nav>
+            <a href="#works" class="active">Работы</a>
+            <a href="#pricing">Прайс</a>
+            <a href="#">Услуги</a>
+            <a href="#">Калькулятор</a>
+            <a href="#">О студии</a>
+        </nav>
+        <a href="#pricing" class="btn-outline">Заказать проект &rarr;</a>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero">
+        <div class="subtitle-top">КРЕАТИВНАЯ ДИЗАЙН-СТУДИЯ</div>
+        <h1 class="main-title">
+            <span>ENTIKA</span>
+            <span>DESIGN</span>
+        </h1>
+        <p class="subtitle-bottom">Дизайн без ограничений.</p>
+        <div class="hero-buttons">
+            <a href="#works" class="btn-primary">СМОТРЕТЬ РАБОТЫ</a>
+            <a href="#pricing" class="btn-dark">ПРАЙС</a>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: РАБОТЫ -->
+    <section class="section-container" id="works">
+        <h2 class="section-title">Наши работы</h2>
+        <div class="grid-cards">
+            <div class="card work-card">
+                <div class="work-image">Ваш проект 1</div>
+                <div class="work-info">
+                    <h3 class="card-title">Branding для TechStart</h3>
+                    <p class="card-desc">Разработка логотипа и фирменного стиля для IT-компании.</p>
+                </div>
+            </div>
+            <div class="card work-card">
+                <div class="work-image">Ваш проект 2</div>
+                <div class="work-info">
+                    <h3 class="card-title">E-commerce Сайт</h3>
+                    <p class="card-desc">UI/UX дизайн для интернет-магазина премиальной одежды.</p>
+                </div>
+            </div>
+            <div class="card work-card">
+                <div class="work-image">Ваш проект 3</div>
+                <div class="work-info">
+                    <h3 class="card-title">Мобильное приложение</h3>
+                    <p class="card-desc">Дизайн интерфейса для фитнес-трекера.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ЦЕНЫ -->
+    <section class="section-container" id="pricing">
+        <h2 class="section-title">Наши тарифы</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3 class="card-title">Базовый</h3>
+                <p class="card-desc">Разработка логотипа, подбор цветовой палитры, базовые шрифты.</p>
+                <div class="card-price">15 000 ₽</div>
+                <a href="#" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Стандарт</h3>
+                <p class="card-desc">Логотип, фирменный стиль, брендбук, дизайн визиток и соцсетей.</p>
+                <div class="card-price">35 000 ₽</div>
+                <a href="#" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Премиум</h3>
+                <p class="card-desc">Полный комплекс: стратегия, брендинг, UI/UX дизайн сайта.</p>
+                <div class="card-price">от 80 000 ₽</div>
+                <a href="#" class="card-btn">Заказать</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПЛАВАЮЩАЯ КНОПКА -->
+    <a href="#" class="floating-btn">
+        <div class="dot"></div>
+        ЗАКАЗАТЬ &nearr;
+    </a>
+
+    <!-- Подключение JS -->
+    <script src="script.js"></script>
+</body>
+</html>

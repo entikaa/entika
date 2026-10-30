@@ -1,0 +1,359 @@
+/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+:root {
+    --bg-color: #00111c;
+    --text-main: #ffffff;
+    --text-muted: #8b98a5;
+    --accent-blue: #a3c2ff;
+    --btn-bg: #ffffff;
+    --btn-text: #05080f;
+    --border-color: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    /* Скрываем стандартный курсор */
+    cursor: none; 
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(30, 50, 90, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%, transparent);
+    background-size: 100% 100%, 100px 100px;
+}
+
+a, button {
+    cursor: none; /* Скрываем стандартный курсор на кликабельных элементах */
+}
+
+/* --- КАСТОМНЫЙ КУРСОР --- */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px; /* Размер курсора */
+    height: 50px;
+    
+    /* ВСТАВЬТЕ СЮДА СВОЙ ЛОГОТИП (замените ссылку ниже) */
+    background-image: url('entikalogo.png'); 
+    
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.2s, height 0.2s, transform 0.1s;
+    filter: drop-shadow(0 0 8px rgba(20, 20, 20, 0.8));
+}
+
+/* Увеличение курсора при наведении на кнопки */
+.custom-cursor.hover {
+    width: 70px;
+    height: 70px;
+}
+
+/* --- НАВИГАЦИЯ --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 8, 15, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-blue);
+}
+
+nav a.active {
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 5px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--text-main);
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 10px 60px;
+}
+
+.subtitle-top {
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.main-title {
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title span:first-child {
+    color: var(--text-main);
+    text-shadow: 0 0 40px rgba(255,255,255,0.2);
+}
+
+.main-title span:last-child {
+    background: linear-gradient(180deg, #ffffff 0%, #a3c2ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 60px rgba(163, 194, 255, 0.3);
+}
+
+.subtitle-bottom {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}
+
+.btn-dark {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    padding: 16px 32px;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.btn-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- СЕКЦИИ С КАРТОЧКАМИ --- */
+.section-container {
+    padding: 100px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-blue);
+    background: rgba(163, 194, 255, 0.05);
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-price {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.card:hover .card-btn {
+    background: var(--accent-blue);
+    color: var(--bg-color);
+    border-color: var(--accent-blue);
+}
+
+/* Работы (картинки-заглушки) */
+.work-card {
+    padding: 0;
+    overflow: hidden;
+}
+.work-image {
+    height: 250px;
+    background: linear-gradient(45deg, #111827, #1e293b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+}
+.work-info {
+    padding: 20px;
+}
+
+/* --- ПЛАВАЮЩАЯ КНОПКА --- */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(10, 15, 25, 0.9);
+    border: 1px solid var(--border-color);
+    padding: 12px 24px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: border-color 0.3s;
+}
+.floating-btn:hover {
+    border-color: var(--accent-blue);
+}
+.floating-btn .dot {
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .section-container {
+        padding: 50px 20px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    .floating-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+}
