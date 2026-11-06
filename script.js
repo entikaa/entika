@@ -1,21 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cursor = document.getElementById('cursor');
-    // Находим все элементы, на которые нужно реагировать курсору
-    const links = document.querySelectorAll('a, button, .card');
+var c = document.getElementById('cur');
 
-    // Движение курсора за мышью
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
+addEventListener('mousemove', function (e) {
+  c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+});
 
-    // Эффект увеличения при наведении на кликабельные элементы
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-        });
-        link.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-        });
-    });
+document.querySelectorAll('a,.btn,summary').forEach(function (el) {
+  el.addEventListener('mouseenter', function () {
+    c.style.width = '64px';
+    c.style.height = '64px';
+    c.style.margin = '-32px 0 0 -32px';
+  });
+
+  el.addEventListener('mouseleave', function () {
+    c.style.width = '44px';
+    c.style.height = '44px';
+    c.style.margin = '-22px 0 0 -22px';
+  });
 });

@@ -1,359 +1,406 @@
-/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
 :root {
-    --bg-color: #00111c;
-    --text-main: #ffffff;
-    --text-muted: #8b98a5;
-    --accent-blue: #a3c2ff;
-    --btn-bg: #ffffff;
-    --btn-text: #05080f;
-    --border-color: rgba(255, 255, 255, 0.15);
+  --bg: #04060d;
+  --card: #0a1020;
+  --line: #16223d;
+  --blue: #3b82ff;
+  --cyan: #5ee7ff;
+  --tx: #e8eeff;
+  --mut: #7f8cab;
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    overflow-x: hidden;
-    /* Скрываем стандартный курсор */
-    cursor: none; 
-    background-image: 
-        radial-gradient(circle at 50% 30%, rgba(30, 50, 90, 0.4) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.02) 75%, transparent 75%, transparent);
-    background-size: 100% 100%, 100px 100px;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-attachment: fixed;
 }
 
-a, button {
-    cursor: none; /* Скрываем стандартный курсор на кликабельных элементах */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(59, 130, 255, .25), transparent 60%),
+    var(--bg);
+  opacity: .93;
+  z-index: -1;
 }
 
-/* --- КАСТОМНЫЙ КУРСОР --- */
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50px; /* Размер курсора */
-    height: 50px;
-    
-    /* ВСТАВЬТЕ СЮДА СВОЙ ЛОГОТИП (замените ссылку ниже) */
-    background-image: url('entikalogo.png'); 
-    
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: width 0.2s, height 0.2s, transform 0.1s;
-    filter: drop-shadow(0 0 8px rgba(20, 20, 20, 0.8));
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Увеличение курсора при наведении на кнопки */
-.custom-cursor.hover {
-    width: 70px;
-    height: 70px;
-}
-
-/* --- НАВИГАЦИЯ --- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    background: rgba(5, 8, 15, 0.8);
-    backdrop-filter: blur(10px);
-}
-
-.logo {
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 2px;
+.w {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 nav {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
 }
 
-nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color 0.3s;
+.logo {
+  font-weight: 800;
+  letter-spacing: .08em;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
 }
 
-nav a:hover, nav a.active {
-    color: var(--accent-blue);
+.logo i {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  
 }
 
-nav a.active {
-    border-bottom: 2px solid var(--accent-blue);
-    padding-bottom: 5px;
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  color: var(--mut);
+  font-size: 14px;
 }
 
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+nav ul a:hover {
+  color: var(--tx);
 }
 
-.btn-outline:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: var(--text-main);
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background: var(--card);
+  cursor: pointer;
+  transition: .2s;
 }
 
-/* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+.btn.p {
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  color: #02050c;
+  border: 0;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 255, .35);
+}
+
 .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 120px 10px 60px;
+  position: relative;
+  padding: 90px 0 70px;
 }
 
-.subtitle-top {
-    font-size: 12px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-    font-weight: 600;
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--cyan);
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
 }
 
-.main-title {
-    font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+h1 {
+  font-size: clamp(40px, 8vw, 84px);
+  line-height: 1;
+  letter-spacing: -.03em;
+  background: linear-gradient(180deg, #fff, #6b7ba3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  max-width: 640px;
 }
 
-.main-title span:first-child {
-    color: var(--text-main);
-    text-shadow: 0 0 40px rgba(255,255,255,0.2);
+.hero p {
+  color: var(--mut);
+  max-width: 460px;
+  margin: 22px 0 28px;
 }
 
-.main-title span:last-child {
-    background: linear-gradient(180deg, #ffffff 0%, #a3c2ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 60px rgba(163, 194, 255, 0.3);
+.hero .btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.subtitle-bottom {
-    font-size: 18px;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-    font-weight: 400;
+.stars {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: min(340px, 45vw);
+  filter: drop-shadow(0 0 30px rgba(59, 130, 255, .6));
+  animation: fl 6s ease-in-out infinite;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 20px;
+@keyframes fl {
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
 }
 
-.btn-primary {
-    background: var(--btn-bg);
-    color: var(--btn-text);
-    padding: 16px 32px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.mq {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding: 18px 0;
+  color: var(--mut);
+  font-weight: 700;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+@keyframes m {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.btn-dark {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-main);
-    padding: 16px 32px;
-    border-radius: 30px;
-    border: 1px solid var(--border-color);
-    font-size: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: background 0.3s ease;
+section {
+  padding: 80px 0;
 }
 
-.btn-dark:hover {
-    background: rgba(255, 255, 255, 0.1);
+h2 {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  background: linear-gradient(180deg, #fff, #5b6b94);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 14px 0 10px;
 }
 
-/* --- СЕКЦИИ С КАРТОЧКАМИ --- */
-.section-container {
-    padding: 100px 50px;
-    max-width: 1400px;
-    margin: 0 auto;
+.sub {
+  color: var(--mut);
+  max-width: 480px;
+  margin-bottom: 36px;
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 40px;
-    text-align: center;
+.grid {
+  display: grid;
+  gap: 16px;
 }
 
-.grid-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.g2 {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.g3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 30px;
-    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    display: flex;
-    flex-direction: column;
+  background: linear-gradient(160deg, #0d1730, var(--card));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-blue);
-    background: rgba(163, 194, 255, 0.05);
+  border-color: var(--blue);
+  transform: translateY(-4px);
 }
 
-.card-title {
-    font-size: 22px;
-    font-weight: 800;
-    margin-bottom: 15px;
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
 }
 
-.card-desc {
-    color: var(--text-muted);
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
+.card p {
+  color: var(--mut);
+  font-size: 14px;
 }
 
-.card-price {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--accent-blue);
-    margin-bottom: 20px;
+.art {
+  height: 150px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  background:
+    radial-gradient(circle at 30% 30%, var(--cyan), transparent 45%),
+    radial-gradient(circle at 70% 70%, var(--blue), #0a1020 70%);
 }
 
-.card-btn {
-    text-align: center;
-    display: block;
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
+.a2 {
+  background: conic-gradient(from 90deg, #0a1020, var(--blue), var(--cyan), #0a1020);
 }
 
-.card:hover .card-btn {
-    background: var(--accent-blue);
-    color: var(--bg-color);
-    border-color: var(--accent-blue);
+.a3 {
+  background: repeating-linear-gradient(45deg, #0a1020 0 14px, #12306b 14px 28px);
 }
 
-/* Работы (картинки-заглушки) */
-.work-card {
-    padding: 0;
-    overflow: hidden;
+.num {
+  font-size: 56px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.work-image {
-    height: 250px;
-    background: linear-gradient(45deg, #111827, #1e293b);
+
+.price {
+  font-size: 44px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+.price small {
+  font-size: 14px;
+  color: var(--mut);
+  font-weight: 400;
+}
+
+.card ul {
+  list-style: none;
+  margin: 16px 0 22px;
+  font-size: 14px;
+  color: var(--mut);
+}
+
+.card li {
+  padding: 5px 0;
+}
+
+.card li::before {
+  content: "✦ ";
+  color: var(--cyan);
+}
+
+.card.hot {
+  background: linear-gradient(160deg, #1a3a80, #0c1a3d);
+  border-color: var(--blue);
+}
+
+details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details p {
+  color: var(--mut);
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+footer {
+  padding: 50px 0 20px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.big {
+  font-size: clamp(60px, 17vw, 200px);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: .9;
+  background: linear-gradient(180deg, #9db8ff, transparent 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-title {
+  margin-bottom: 20px;
+}
+
+.footer-big {
+  margin-top: 40px;
+}
+
+.cur {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  color: #02050c;
+  pointer-events: none;
+  z-index: 99;
+  transition: transform .15s;
+}
+
+.cur img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  .btn,
+  summary {
+    cursor: none;
+  }
+
+  .cur {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-}
-.work-info {
-    padding: 20px;
+  }
 }
 
-/* --- ПЛАВАЮЩАЯ КНОПКА --- */
-.floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: rgba(10, 15, 25, 0.9);
-    border: 1px solid var(--border-color);
-    padding: 12px 24px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 600;
-    font-size: 14px;
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    transition: border-color 0.3s;
-}
-.floating-btn:hover {
-    border-color: var(--accent-blue);
-}
-.floating-btn .dot {
-    width: 8px;
-    height: 8px;
-    background: #3b82f6;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #3b82f6;
-}
+@media (max-width: 760px) {
+  nav ul {
+    display: none;
+  }
 
-/* --- АДАПТИВНОСТЬ --- */
-@media (max-width: 768px) {
-    header {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .section-container {
-        padding: 50px 20px;
-    }
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-    }
-    .floating-btn {
-        bottom: 20px;
-        right: 20px;
-    }
+  .g2,
+  .g3 {
+    grid-template-columns: 1fr;
+  }
+
+  .stars {
+    opacity: .35;
+  }
 }

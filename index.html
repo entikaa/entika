@@ -1,108 +1,137 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENTIKA DESIGN | Дизайн на заказ</title>
-    <!-- Подключение шрифтов Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ENTIKA DESIGN — Дизайн на заказ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="cur" id="cur"><img src="entikalogo.png" alt=""></div>
 
-    <!-- КАСТОМНЫЙ КУРСОР -->
-    <div class="custom-cursor" id="cursor"></div>
+  <div class="w">
+    <nav>
+      <a class="logo" href="#"><i></i>ENTIKA DESIGN</a>
+      <ul>
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#price">Цены</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <a class="btn p" href="#contact">Заказать</a>
+    </nav>
 
-    <!-- ШАПКА САЙТА -->
-    <header>
-        <div class="logo">ENTIKA DESIGN</div>
-        <nav>
-            <a href="#works" class="active">Работы</a>
-            <a href="#pricing">Прайс</a>
-            <a href="#">Услуги</a>
-            <a href="#">Калькулятор</a>
-            <a href="#">О студии</a>
-        </nav>
-        <a href="#pricing" class="btn-outline">Заказать проект &rarr;</a>
-    </header>
+    <div class="hero">
+      <svg class="stars" viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#cfe0ff"/>
+            <stop offset="1" stop-color="#3b82ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 10Q108 92 190 100Q108 108 100 190Q92 108 10 100Q92 92 100 10Z" fill="url(#g)" opacity=".9"/>
+        <path d="M160 20Q163 45 188 48Q163 51 160 76Q157 51 132 48Q157 45 160 20Z" fill="#5ee7ff"/>
+      </svg>
+      <span class="tag">✦ СКОРО!: 3Д Дизайн.</span>
+      <h2>Дизайн, который всегда оставляет правильное впечатление</h2>
+      <p>Статичный дизайн, фирменный стиль, Оформление брендов, блогеров и бизнеса. Дизайн на заказ — под ваши задачи.</p>
+      <div class="btns">
+        <a class="btn p" href="#price">Выбрать тариф</a>
+        <a class="btn" href="#works">Смотреть работы</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
-    <section class="hero">
-        <div class="subtitle-top">КРЕАТИВНАЯ ДИЗАЙН-СТУДИЯ</div>
-        <h1 class="main-title">
-            <span>ENTIKA</span>
-            <span>DESIGN</span>
-        </h1>
-        <p class="subtitle-bottom">Дизайн без ограничений.</p>
-        <div class="hero-buttons">
-            <a href="#works" class="btn-primary">СМОТРЕТЬ РАБОТЫ</a>
-            <a href="#pricing" class="btn-dark">ПРАЙС</a>
-        </div>
+  <div class="w">
+    <section id="works">
+      <span class="tag">Работы</span>
+      <h2>Дизайн, который<br>работает на результат</h2>
+      <p class="sub">Подборка проектов: от логотипов до полноценной айдентики.</p>
+      <div class="grid g2">
+        <div class="card"><div class="art"></div><h3>Фирменный стиль для кофейни</h3><p>Логотип, палитра, меню, упаковка</p></div>
+        <div class="card"><div class="art a2"></div><h3>Логотип IT-стартапа</h3><p>Знак и гайдлайн</p></div>
+        <div class="card"><div class="art a3"></div><h3>Оформление соцсетей</h3><p>Шаблоны постов и сторис</p></div>
+        <div class="card"><div class="art a2"></div><h3>Упаковка косметики</h3><p>Дизайн коробки и этикетки</p></div>
+      </div>
     </section>
 
-    <!-- СЕКЦИЯ: РАБОТЫ -->
-    <section class="section-container" id="works">
-        <h2 class="section-title">Наши работы</h2>
-        <div class="grid-cards">
-            <div class="card work-card">
-                <div class="work-image">Ваш проект 1</div>
-                <div class="work-info">
-                    <h3 class="card-title">Branding для TechStart</h3>
-                    <p class="card-desc">Разработка логотипа и фирменного стиля для IT-компании.</p>
-                </div>
-            </div>
-            <div class="card work-card">
-                <div class="work-image">Ваш проект 2</div>
-                <div class="work-info">
-                    <h3 class="card-title">E-commerce Сайт</h3>
-                    <p class="card-desc">UI/UX дизайн для интернет-магазина премиальной одежды.</p>
-                </div>
-            </div>
-            <div class="card work-card">
-                <div class="work-image">Ваш проект 3</div>
-                <div class="work-info">
-                    <h3 class="card-title">Мобильное приложение</h3>
-                    <p class="card-desc">Дизайн интерфейса для фитнес-трекера.</p>
-                </div>
-            </div>
-        </div>
+    <section>
+      <span class="tag">Достижения</span>
+      <h2>Результаты,<br>которым можно доверять</h2>
+      <p class="sub">Мы помогаем брендам выглядеть сильнее и запоминаться.</p>
+      <div class="grid g3">
+        <div class="card"><div class="num">200+</div><p>выполненных проектов</p></div>
+        <div class="card"><div class="num">98%</div><p>довольных клиентов</p></div>
+        <div class="card"><div class="num">3 дня</div><p>средний срок первого макета</p></div>
+      </div>
     </section>
 
-    <!-- СЕКЦИЯ: ЦЕНЫ -->
-    <section class="section-container" id="pricing">
-        <h2 class="section-title">Наши тарифы</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <h3 class="card-title">Базовый</h3>
-                <p class="card-desc">Разработка логотипа, подбор цветовой палитры, базовые шрифты.</p>
-                <div class="card-price">15 000 ₽</div>
-                <a href="#" class="card-btn">Заказать</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Стандарт</h3>
-                <p class="card-desc">Логотип, фирменный стиль, брендбук, дизайн визиток и соцсетей.</p>
-                <div class="card-price">35 000 ₽</div>
-                <a href="#" class="card-btn">Заказать</a>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Премиум</h3>
-                <p class="card-desc">Полный комплекс: стратегия, брендинг, UI/UX дизайн сайта.</p>
-                <div class="card-price">от 80 000 ₽</div>
-                <a href="#" class="card-btn">Заказать</a>
-            </div>
+    <section id="price">
+      <span class="tag">Цены</span>
+      <h2>Гибкие тарифы<br>для любого бизнеса</h2>
+      <p class="sub">Выберите подходящий пакет — доработки включены.</p>
+      <div class="grid g3">
+        <div class="card">
+          <h3>Старт</h3>
+          <div class="price">1 500 ₽</div>
+          <ul>
+            <li>Логотип, 2 варианта</li>
+            <li>3 правки</li>
+            <li>Файлы PNG и SVG</li>
+          </ul>
+          <a class="btn" href="#contact">Заказать</a>
         </div>
+        <div class="card hot">
+          <h3>Бренд</h3>
+          <div class="price">5 000 ₽</div>
+          <ul>
+            <li>Логотип и палитра</li>
+            <li>Шрифты и паттерны</li>
+            <li>Брендбук PDF</li>
+            <li>Неограниченные правки</li>
+          </ul>
+          <a class="btn p" href="#contact">Заказать</a>
+        </div>
+        <div class="card">
+          <h3>Премиум</h3>
+          <div class="price">12 000 ₽</div>
+          <ul>
+            <li>Полная айдентика</li>
+            <li>Соцсети и упаковка</li>
+            <li>Личный дизайнер</li>
+          </ul>
+          <a class="btn" href="#contact">Заказать</a>
+        </div>
+      </div>
     </section>
 
-    <!-- ПЛАВАЮЩАЯ КНОПКА -->
-    <a href="#" class="floating-btn">
-        <div class="dot"></div>
-        ЗАКАЗАТЬ &nearr;
-    </a>
+    <section id="faq">
+      <span class="tag">FAQ</span>
+      <h2>Ответы на вопросы</h2>
+      <br>
+      <details>
+        <summary>Сколько делается заказ?</summary>
+        <p>Первый макет — от 3 дней, полный проект — до 2 недель.</p>
+      </details>
+      <details>
+        <summary>Можно ли внести правки?</summary>
+        <p>Да, правки входят в каждый тариф.</p>
+      </details>
+      <details>
+        <summary>Какие файлы я получу?</summary>
+        <p>Исходники, PNG, SVG и PDF — всё для печати и интернета.</p>
+      </details>
+    </section>
+  </div>
 
-    <!-- Подключение JS -->
-    <script src="script.js"></script>
+  <footer id="contact">
+    <div class="w">
+      <h2 class="contact-title">Готовы начать проект?</h2>
+      <a class="btn p" href="#">Написать нам</a>
+      <div class="big footer-big">ENTIKA</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
