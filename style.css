@@ -1,11 +1,11 @@
 :root {
-  --bg: #04060d;
-  --card: #0a1020;
-  --line: #16223d;
-  --blue: #3b82ff;
-  --cyan: #5ee7ff;
-  --tx: #e8eeff;
-  --mut: #7f8cab;
+  --bg: #101010;
+  --card: #111111;
+  --line: #747474;
+  --blue: #dfdfdf;
+  --cyan: #eaeaea;
+  --tx: #ececec;
+  --mut: #afafaf;
   color-scheme: dark;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
@@ -15,7 +15,7 @@
 html {
   scroll-behavior: smooth;
   min-height: 100%;
-  background: #02040a;
+  background: #131313;
   --p: 0;
 }
 
@@ -37,9 +37,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 25% 30%, rgba(59, 130, 255, .38), transparent 30%),
-    radial-gradient(circle at 75% 60%, rgba(94, 231, 255, .22), transparent 28%),
-    radial-gradient(circle at 50% 90%, rgba(30, 80, 220, .4), transparent 35%);
+    radial-gradient(circle at 25% 30%, rgba(16, 16, 16, 0.38), transparent 30%),
+    radial-gradient(circle at 75% 60%, rgba(96, 96, 96, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(49, 49, 49, 0.4), transparent 35%);
   animation: drift 22s ease-in-out infinite alternate;
   opacity: calc(.25 + var(--p, 0) * .75);
   will-change: transform;
@@ -52,8 +52,8 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(60, 100, 200, .09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(60, 100, 200, .09) 1px, transparent 1px);
+    linear-gradient(rgba(147, 147, 147, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 198, 198, 0.09) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -124,13 +124,13 @@ nav ul a:hover { color: var(--tx); }
 
 .btn.p {
   background: linear-gradient(135deg, var(--cyan), var(--blue));
-  color: #02050c;
+  color: #1c1c1c;
   border: 0;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 255, .35);
+  box-shadow: 0 8px 30px rgba(214, 214, 214, 0.35);
 }
 
 .hero {
@@ -153,7 +153,7 @@ h1 {
   font-size: clamp(40px, 8vw, 84px);
   line-height: 1;
   letter-spacing: -.03em;
-  background: linear-gradient(180deg, #fff, #6b7ba3);
+  background: linear-gradient(180deg, #fff, #acacac);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -176,8 +176,8 @@ h1 {
   position: absolute;
   right: 0;
   top: 40px;
-  width: min(340px, 45vw);
-  filter: drop-shadow(0 0 30px rgba(59, 130, 255, .6));
+  width: min(550px, 45vw);
+  filter: drop-shadow(0 0 30px rgba(71, 71, 71, 0.6));
   animation: fl 6s ease-in-out infinite;
 }
 
@@ -196,7 +196,7 @@ h2 {
   font-size: clamp(30px, 5vw, 52px);
   line-height: 1.05;
   letter-spacing: -.02em;
-  background: linear-gradient(180deg, #fff, #5b6b94);
+  background: linear-gradient(180deg, #fff, #949494);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -214,7 +214,7 @@ h2 {
 .g3 { grid-template-columns: repeat(3, 1fr); }
 
 .card {
-  background: linear-gradient(160deg, #0d1730, var(--card));
+  background: linear-gradient(160deg, #2a2a2a, var(--card));
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 24px;
@@ -237,11 +237,11 @@ h2 {
   margin-bottom: 18px;
   background:
     radial-gradient(circle at 30% 30%, var(--cyan), transparent 45%),
-    radial-gradient(circle at 70% 70%, var(--blue), #0a1020 70%);
+    radial-gradient(circle at 70% 70%, var(--blue), #606060 70%);
 }
 
-.a2 { background: conic-gradient(from 90deg, #0a1020, var(--blue), var(--cyan), #0a1020); }
-.a3 { background: repeating-linear-gradient(45deg, #0a1020 0 14px, #12306b 14px 28px); }
+.a2 { background: conic-gradient(from 90deg, #323232, var(--blue), var(--cyan), #000000); }
+.a3 { background: repeating-linear-gradient(45deg, #000000 0 14px, #353535 14px 28px); }
 
 .num {
   font-size: 56px;
@@ -275,7 +275,7 @@ h2 {
 .card li::before { content: "✦ "; color: var(--cyan); }
 
 .card.hot {
-  background: linear-gradient(160deg, #1a3a80, #0c1a3d);
+  background: linear-gradient(160deg, #2f2f2f, #151515);
   border-color: var(--blue);
 }
 
@@ -319,7 +319,7 @@ footer {
   justify-content: center;
   font-weight: 800;
   font-size: 11px;
-  color: #02050c;
+  color: #000000;
   pointer-events: none;
   z-index: 99;
   opacity: 0;
@@ -335,7 +335,7 @@ footer {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background: linear-gradient(180deg, #030814 0%, #06173f 45%, #0d3a96 100%);
+  background: linear-gradient(180deg, #000000 0%, #202020 45%, #545454 100%);
   opacity: var(--p, 0);
 }
 
@@ -357,7 +357,7 @@ footer {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 1px solid #14283f;
+  border: 1px solid #2b2b2b;
 }
 
 .svc .top {
@@ -365,7 +365,7 @@ footer {
   justify-content: space-between;
   font-size: 13px;
   letter-spacing: .2em;
-  color: #6fa5e0;
+  color: #7b7b7b;
   font-weight: 700;
   margin-bottom: 36px;
 }
@@ -431,8 +431,8 @@ footer {
 .box {
   position: relative;
   width: min(750px, 100%);
-  background: #08111f;
-  border: 1px solid #14283f;
+  background: #131313;
+  border: 1px solid #282828;
   border-radius: 30px;
   padding: clamp(24px, 5vw, 42px);
   transform: translateY(24px) scale(.97);
@@ -444,7 +444,7 @@ footer {
 .box .eb {
   font-size: 12px;
   letter-spacing: .2em;
-  color: #6fa5e0;
+  color: #1a1a1a;
   margin-bottom: 14px;
 }
 
@@ -475,7 +475,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  border-top: 1px solid #14283f;
+  border-top: 1px solid #575757;
   padding-top: 24px;
   flex-wrap: wrap;
 }
@@ -489,15 +489,15 @@ footer {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 1px solid #14283f;
+  border: 1px solid #383838;
   background: transparent;
   color: #fff;
   font-size: 20px;
 }
 
 .box .btn {
-  background: #eaf5ff;
-  color: #050a16;
+  background: #e5e5e5;
+  color: #1c1c1c;
   border: 0;
 }
 
@@ -544,7 +544,7 @@ footer {
   justify-content: center;
   font-size: clamp(80px, 14vw, 160px);
   font-weight: 900;
-  color: #02050c;
+  color: #212121;
 }
 
 .herologo img { object-fit: contain; }
@@ -587,7 +587,7 @@ footer {
 
 .flt button.on {
   background: #f3f6ff;
-  color: #050a16;
+  color: #131313;
   border-color: #f3f6ff;
 }
 
@@ -607,8 +607,8 @@ footer {
 
 /* CTA */
 .cta {
-  background: linear-gradient(160deg, #0c1a2e, #08111f 60%);
-  border: 1px solid #14283f;
+  background: linear-gradient(160deg, #000000, #161616 60%);
+  border: 1px solid #141414;
   border-radius: 36px;
   padding: clamp(28px, 6vw, 70px);
   position: relative;
@@ -623,7 +623,7 @@ footer {
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: #12294a;
+  background: #1d1d1d;
 }
 
 .cta > * {
@@ -647,7 +647,7 @@ footer {
   margin: 0 0 22px;
 }
 
-.cta h2 span { color: #8ab8f0; }
+.cta h2 span { color: #e8e8e8; }
 
 .cta p {
   color: var(--mut);
@@ -673,4 +673,177 @@ footer {
   nav ul { display: none; }
   .g2, .g3 { grid-template-columns: 1fr; }
   .stars { opacity: .35; }
+}
+
+/* Убедитесь, что у .art есть скрытие переполнения и фиксированные размеры/пропорции, если их нет */
+.art {
+    overflow: hidden;
+    /* position: relative;  <- добавьте, если нужно позиционировать элементы внутри */
+}
+
+/* Стили для самой картинки */
+.art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Это свойство заставляет картинку заполнить блок без искажений (обрезая лишнее) */
+    display: block;
+    border-radius: inherit; /* Наследует скругления от родительского .art, если они есть */
+}
+
+/* Основной фон лайтбокса (размытие и затемнение) */
+.cl-lightbox {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.9); /* Темный фон */
+    backdrop-filter: blur(8px); /* Размытие заднего плана */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cl-lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Контейнер модального окна */
+.cl-container {
+    background-color: #141414; /* Темно-серый цвет контейнера */
+    border: 1px solid #333;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.cl-lightbox.active .cl-container {
+    transform: scale(1);
+}
+
+/* Зона с картинкой */
+.cl-image-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-height: 400px;
+    max-height: 70vh;
+}
+
+/* Сама картинка */
+.cl-image-area img {
+    max-width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 8px;
+    /* Тонкая рамка вокруг картинки, как на скрине */
+    box-shadow: 0 0 0 1px #333; 
+}
+
+/* Кнопки навигации (влево/вправо) */
+.cl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.cl-nav:hover {
+    background: #333;
+    color: #fff;
+    border-color: #666;
+}
+
+.cl-prev { left: 20px; }
+.cl-next { right: 20px; }
+
+/* Кнопка закрытия (крестик) */
+.cl-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 20;
+}
+
+.cl-close:hover {
+    background: #333;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* Нижняя панель с информацией */
+.cl-info-bar {
+    background-color: #1a1a1a;
+    border-top: 1px solid #2a2a2a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Текст в нижней панели */
+.cl-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cl-category {
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cl-title {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Пагинация (цифры) */
+.cl-pagination {
+    color: #888;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums; /* Чтобы цифры не прыгали */
+}
+
+.cl-pagination span {
+    color: #fff;
 }

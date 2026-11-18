@@ -1,3 +1,107 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Собираем данные со всех карточек
+    const cards = document.querySelectorAll('.card');
+    const galleryData = [];
+
+    cards.forEach(card => {
+        const img = card.querySelector('.art img');
+        const title = card.querySelector('h3');
+        const category = card.querySelector('p');
+
+        if (img && title) {
+            galleryData.push({
+                src: img.src,
+                title: title.textContent,
+                category: category ? category.textContent : 'Работа'
+            });
+        }
+    });
+
+    // Элементы лайтбокса
+    const lightbox = document.getElementById('custom-lightbox');
+    const lightboxImg = document.getElementById('cl-img');
+    const closeBtn = document.getElementById('cl-close');
+    const prevBtn = document.getElementById('cl-prev');
+    const nextBtn = document.getElementById('cl-next');
+    
+    // Элементы текста
+    const titleEl = document.getElementById('cl-title');
+    const categoryEl = document.getElementById('cl-category');
+    const currentEl = document.getElementById('cl-current');
+    const totalEl = document.getElementById('cl-total');
+
+    let currentIndex = 0;
+
+    // Устанавливаем общее количество картинок
+    totalEl.textContent = galleryData.length;
+
+    // Вешаем клики на карточки
+    cards.forEach((card, index) => {
+        const imgWrapper = card.querySelector('.art');
+        if (imgWrapper) {
+            imgWrapper.style.cursor = 'pointer'; // Добавляем курсор-руку
+            imgWrapper.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                openLightbox();
+            });
+        }
+    });
+
+    // Функция обновления контента в окне
+    function updateLightbox() {
+        const data = galleryData[currentIndex];
+        lightboxImg.src = data.src;
+        titleEl.textContent = data.title;
+        categoryEl.textContent = data.category;
+        currentEl.textContent = currentIndex + 1;
+    }
+
+    // Открытие
+    function openLightbox() {
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Отключаем скролл страницы
+    }
+
+    // Закрытие
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Возвращаем скролл
+    }
+
+    // Вперед
+    function showNext() {
+        currentIndex = (currentIndex + 1) % galleryData.length;
+        updateLightbox();
+    }
+
+    // Назад
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length;
+        updateLightbox();
+    }
+
+    // Слушатели событий
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    // Клик по фону (вне контейнера)
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Управление с клавиатуры
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
+});
+
 /* ---------- Кастомный курсор ---------- */
 var c = document.getElementById('cur'),
     tx = 0, ty = 0,
